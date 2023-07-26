@@ -1,31 +1,31 @@
-$(function(){
-  let all_panels = $('.templatemo-accordion > li > ul').hide();
+$(function () {
+  let all_panels = $(".templatemo-accordion > li > ul").hide();
 
-  $('.templatemo-accordion > li > a').on('click',function(){
-    let target =  $(this).next();
+  $(".templatemo-accordion > li > a").on("click", function () {
+    let target = $(this).next();
 
-    if(!target.hasClass('active')){
-      all_panels.removeClass('active').slideUp();
-      target.addClass('active').slideDown();
+    if (!target.hasClass("active")) {
+      all_panels.removeClass("active").slideUp();
+      target.addClass("active").slideDown();
     }
 
     return false;
   });
 
-  $('.product-links-wap a').on('click',function(){
-    let this_src = $(this).children('img').attr('src');
+  $(".product-links-wap a").on("click", function () {
+    let this_src = $(this).children("img").attr("src");
 
-    if (this_src){
-      $('#product-detail').attr('src', this_src);
+    if (this_src) {
+      $("#product-detail").attr("src", this_src);
     }
-      
+
     return false;
   });
 
-  $('#btn-minus').on('click',function(){
+  $("#btn-minus").on("click", function () {
     let val = $("#var-value").html();
-      
-    val = (val > 1) ? val - 1 : val;
+
+    val = val > 1 ? val - 1 : val;
 
     $("#var-value").html(val);
     $("#product-quanity").val(val);
@@ -33,7 +33,7 @@ $(function(){
     return false;
   });
 
-  $('#btn-plus').on('click',function(){
+  $("#btn-plus").on("click", function () {
     let val = $("#var-value").html();
 
     val++;
@@ -44,13 +44,13 @@ $(function(){
     return false;
   });
 
-  $('.btn-size').on('click',function(){
+  $(".btn-size").on("click", function () {
     let this_val = $(this).html();
 
-    if (this_val){
+    if (this_val) {
       $("#product-size").val(this_val);
-      $(".btn-size").removeClass('btn-secondary').addClass('btn-success');
-      $(this).removeClass('btn-success').addClass('btn-secondary');
+      $(".btn-size").removeClass("btn-secondary").addClass("btn-success");
+      $(this).removeClass("btn-success").addClass("btn-secondary");
     }
 
     return false;
